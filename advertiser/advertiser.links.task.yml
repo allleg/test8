@@ -1,0 +1,20 @@
+advertiser.settings_tab:
+  route_name: advertiser.advertiser_settings
+  title: Settings
+  base_route: advertiser.advertiser_settings
+
+advertiser.view:
+  route_name: entity.advertiser.canonical
+  base_route: entity.advertiser.canonical
+  title: View
+
+advertiser.page_edit:
+  route_name: entity.advertiser.edit_form
+  base_route: entity.advertiser.canonical
+  title: Edit
+
+advertiser.delete_confirm:
+  route_name:  entity.advertiser.delete_form
+  base_route:  entity.advertiser.canonical
+  title: Delete
+  weight: 10

@@ -1,0 +1,10 @@
+entity.advertiser.collection:
+  title: 'Advertiser Content Entity: Advertisers listing'
+  route_name: entity.advertiser.collection
+  description: 'List advertisers'
+  weight: 10
+advertiser.admin.structure.settings:
+  title: 'Advertiser settings'
+  description: 'Configure advertiser entity'
+  route_name:  advertiser.advertiser_settings
+  parent: system.admin_structure

@@ -1,0 +1,6 @@
+advertiser.advertiser_add:
+  route_name: advertiser.advertiser_add
+  title: 'Add advertiser'
+  appears_on:
+    - entity.advertiser.collection
+    - entity.advertiser.canonical

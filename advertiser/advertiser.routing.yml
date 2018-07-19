@@ -1,0 +1,47 @@
+entity.advertiser.canonical:
+  path: '/advertiser/{advertiser}'
+  defaults:
+    _entity_view: 'advertiser'
+    _title: 'Advertiser content'
+  requirements:
+    _entity_access: 'advertiser.view'
+
+entity.advertiser.collection:
+  path: '/test8'
+  defaults:
+    _entity_list: 'advertiser'
+    _title: 'Advertiser list'
+  requirements:
+    _permission: 'view advertiser entity'
+
+advertiser.advertiser_add:
+  path: '/advertiser/add'
+  defaults:
+    _entity_form: advertiser.default
+    _title: 'Add advertiser'
+  requirements:
+    _entity_create_access: 'advertiser'
+
+entity.advertiser.edit_form:
+  path: '/advertiser/{advertiser}/edit'
+  defaults:
+    _entity_form: advertiser.default
+    _title: 'Edit advertiser'
+  requirements:
+    _entity_access: 'advertiser.update'
+
+entity.advertiser.delete_form:
+  path: '/advertiser/{advertiser}/delete'
+  defaults:
+    _entity_form: advertiser.delete
+    _title: 'Delete advertiser'
+  requirements:
+    _entity_access: 'advertiser.delete'
+
+advertiser.advertiser_settings:
+  path: '/admin/structure/advertiser_settings'
+  defaults:
+    _form: '\Drupal\advertiser\Form\AdvertiserSettingsForm'
+    _title: 'Advertiser settings'
+  requirements:
+    _permission: 'administer advertiser entity'
