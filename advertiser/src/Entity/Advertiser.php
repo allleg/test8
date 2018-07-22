@@ -43,6 +43,16 @@ use Drupal\Core\Entity\ContentEntityInterface;
 
 class Advertiser extends ContentEntityBase implements ContentEntityInterface {
 
+  /**
+   * {@inheritdoc}
+   *
+   * Define the field properties here.
+   *
+   * Field name, type and size determine the table structure.
+   *
+   * In addition, we can define how the field and its content can be manipulated
+   * in the GUI. The behaviour of the widgets used can be determined here.
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
 
     // Standard field, used as unique if primary index.
@@ -57,6 +67,8 @@ class Advertiser extends ContentEntityBase implements ContentEntityInterface {
       ->setDescription(t('The UUID of the Advertiser entity.'))
       ->setReadOnly(TRUE);
 
+    // Name field for the advertiser.
+    // Set display options for the view as well as the form.
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
       ->setDescription(t('The Name of the Advertiser entity.'))
@@ -77,7 +89,9 @@ class Advertiser extends ContentEntityBase implements ContentEntityInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-      $fields['description'] = BaseFieldDefinition::create('string')
+    // Description field for the advertiser.
+    // Set display options for the view as well as the form.
+    $fields['description'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Description'))
       ->setDescription(t('The Description of the Advertiser entity.'))
       ->setSettings([
@@ -97,7 +111,9 @@ class Advertiser extends ContentEntityBase implements ContentEntityInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-      $fields['lurl'] = BaseFieldDefinition::create('string')
+    // Url field for the advertiser.
+    // Set display options for the view as well as the form.
+    $fields['lurl'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Url'))
       ->setDescription(t('The Url of the Advertiser entity.'))
       ->setSettings([
@@ -117,16 +133,11 @@ class Advertiser extends ContentEntityBase implements ContentEntityInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    // $fields['langcode'] = BaseFieldDefinition::create('language')
-    //   ->setLabel(t('Language code'))
-    //   ->setDescription(t('The language code of entity.'));
-    // $fields['created'] = BaseFieldDefinition::create('created')
-    //   ->setLabel(t('Created'))
-    //   ->setDescription(t('The time that the entity was created.'));
-    // $fields['changed'] = BaseFieldDefinition::create('changed')
-    //   ->setLabel(t('Changed'))
-    //   ->setDescription(t('The time that the entity was last edited.'));
+    $fields['langcode'] = BaseFieldDefinition::create('language')
+      ->setLabel(t('Language code'))
+      ->setDescription(t('The language code of entity.'));
 
     return $fields;
   }
+  
 }

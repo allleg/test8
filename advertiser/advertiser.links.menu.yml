@@ -1,5 +1,7 @@
+# Define the menu links for this module
+
 entity.advertiser.collection:
-  title: 'Advertiser Content Entity: Advertisers listing'
+  title: 'Advertisers listing'
   route_name: entity.advertiser.collection
   description: 'List advertisers'
   weight: 10

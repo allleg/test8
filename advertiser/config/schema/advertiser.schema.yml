@@ -1,5 +1,8 @@
-advertiser.settings:
+# See the file config/install/advertiser.advertiser.yml
+
+advertiser.advertiser:
   type: config_object
+  label: 'Advertiser'
 mapping:
   name:
     type: string

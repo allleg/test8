@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Contains install function for Advertiser.
+ */
+
+use Drupal\advertiser\Entity\Advertiser;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Language\LanguageInterface;
+
+/**
+ * Implements hook_install().
+ */
+function advertiser_install() {
+	$first = \Drupal::config('advertiser.advertiser');
+	$uuid_service = \Drupal::service('uuid');
+	$uuid = $uuid_service->generate();
+	$name = $first->get('name');
+	$description = $first->get('description');
+	$lurl = $first->get('lurl');
+	$lc = LanguageInterface::LANGCODE_DEFAULT;
+	$advertiser = new Advertiser([
+		'uuid' => array($lc => $uuid),
+		'name' => array($lc => $name),
+		'description' => array($lc => $description),
+		'lurl' => array($lc => $lurl),
+	], 'advertiser');
+	$advertiser->save();
+}

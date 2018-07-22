@@ -1,3 +1,5 @@
+# Define the 'local' links for the module
+
 advertiser.settings_tab:
   route_name: advertiser.advertiser_settings
   title: Settings

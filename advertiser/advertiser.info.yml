@@ -1,5 +1,7 @@
 name: Advertiser
 type: module
-description: 'Advertiser entity'
-package: custom
-core: 8.x
+description: Advertiser entity
+package: Custom
+# core: 8.x
+version: '8.x-1.x'
+core: '8.x'

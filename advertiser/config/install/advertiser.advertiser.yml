@@ -1,0 +1,6 @@
+# Drupal\advertiser\Entity\Advertiser
+
+name: 'Thing'
+description: 'Thing description'
+lurl: 'Thing url'
+langcode: 'en'
